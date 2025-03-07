@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        color: green;
+        text-align: center;
+      }
+      input {
+        font-size: 40px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      function push() {
+         a = document.getElementById('fir').value;
+         b = document.getElementById('sec').value;
+         c = a - b;
+
+        if (c <= 1500) {
+          c = c - 1500;
+        } else if (c <= 3000) {
+           aa = c - 1500;
+           bb = aa * 35;
+          c = bb + 15000;
+        } else if (c <= 4000) {
+           aa = c - 1500;
+           bb = aa - 1500;
+           cc = bb * 80;
+          c = cc + 67500;
+        } else if (c >= 4001) {
+           aa = c - 1500;
+           bb = aa - 1500;
+           cc = bb - 1000;
+           dd = cc * 120;
+          c = dd + 147500;
+        }
+
+        // Format the result with commas
+        document.getElementById('res').value = c.toLocaleString();
+      }
+    </script>
+  </head>
+  <body>
+    <div style="margin-left:40px; margin-top:200px">
+      <span style="font-size:40px">First</span> <br>
+      <input id="fir" type="number"><br><br>
+
+      <span style="font-size:40px">Last</span><br>
+      <input id="sec" type="number"><br><br>
+
+      <span style="font-size:40px">Amount</span><br>
+      <input style="color:red;" disabled="disabled" id="res"><br><br><br>
+
+      <button onclick="push()" style="font-size:40px">Calculate</button> <br><br><br>
+    </div>
+  </body>
+</html>
